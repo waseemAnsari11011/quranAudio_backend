@@ -11,5 +11,5 @@ router.post("/register", authController.register);
 // @desc    Login a user
 // @access  Public
 router.post("/login", authController.login);
-
+//
 module.exports = router;
