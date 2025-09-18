@@ -7,6 +7,7 @@ const quranRoutes = require("./routes/chapter.routes");
 const verseRoutes = require("./routes/verse.routes");
 const recitationRoutes = require("./routes/recitation.routes");
 const authRoutes = require("./routes/auth.route");
+const paymentRoutes = require("./routes/payment.route");
 
 const cors = require("cors");
 const app = express();
@@ -52,6 +53,7 @@ app.use("/api", quranRoutes); // Prefix all quran routes with /api
 app.use("/api", verseRoutes);
 app.use("/api", recitationRoutes);
 app.use("/api/auth", authRoutes);
+app.use("/api", paymentRoutes);
 
 // --- Server Start ---
 app.listen(port, () => {
