@@ -6,6 +6,8 @@ const { getAccessToken } = require("./services/auth.service");
 const quranRoutes = require("./routes/chapter.routes");
 const verseRoutes = require("./routes/verse.routes");
 const recitationRoutes = require("./routes/recitation.routes");
+const authRoutes = require("./routes/auth.route");
+
 const cors = require("cors");
 const app = express();
 const port = 8000;
@@ -49,6 +51,8 @@ setInterval(getAccessToken, TOKEN_REFRESH_INTERVAL);
 app.use("/api", quranRoutes); // Prefix all quran routes with /api
 app.use("/api", verseRoutes);
 app.use("/api", recitationRoutes);
+app.use("/api/auth", authRoutes);
+
 // --- Server Start ---
 app.listen(port, () => {
   console.log(`Quran API proxy server listening at http://localhost:${port}`);
